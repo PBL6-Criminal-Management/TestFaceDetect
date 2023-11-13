@@ -1,0 +1,20 @@
+- test k tìm dc face => vẫn cho vô predict (oke r)
+
+*Nhận dạng đúng khi range:
+- ảnh gần giống ảnh train => distance bn? (2000-3000)
+- ảnh chụp mới => distance bn? (5000-10313)
+- nếu nhận ra khuôn mặt trong ảnh => distance bn? (2300-10313)
+- nếu k nhận ra khuôn mặt trong ảnh => distance bn? (1500 - >2000)
+*Đối với người khác, tb distance:
+- ảnh người khác => distance bn? (11473 - >19000)
+=> distance bn là phù hợp (<10700 vs nhận ra khuôn mặt và <2000 với k nhận ra khuôn mặt) (oke r)
+
+- ý nghĩa của đối số threshold (ngưỡng quyết định 1 khuôn mặt mới có thoả mãn k, nếu max thì chấp nhận - nên để max để sau mình custom theo mình sẽ hợp lý hơn), component count (số lượng thành phần  được sử dụng để mô tả không gian khuôn mặt, 80-150 phổ biến) (oke r)
+
+- nhận dạng 2 bên mặt, phát hiện face khi ở khoảng cách xa, khuôn mặt nhỏ
+
+- bỏ bớt save image cho nhẹ train (oke r)
+
+- tính độ chính xác nhận dạng, phần trăm dự đoán cho mỗi label
+
+- resize bn là tốt nhất cho train (phổ biến là 200x200) (oke r)
