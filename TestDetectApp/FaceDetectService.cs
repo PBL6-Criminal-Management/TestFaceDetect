@@ -98,7 +98,7 @@ namespace TestDetectApp
                                 //Here results found known faces
                                 if (result.Label != -1 && result.Distance < ThresholdForDetectedFacesImage)
                                 {
-                                    res = "id: " + result.Label + " name: " + PersonsNames[result.Label];
+                                    res = "id: " + result.Label + " name: " + PersonsNames[result.Label] + " accuracy: " + (1 - result.Distance/ThresholdForDetectedFacesImage)*100 + " %";
                                     CvInvoke.PutText(imageFrame, PersonsNames[result.Label], new Point(face.X - 2, face.Y - 2),
                                         FontFace.HersheyComplex, 1.0, new Bgr(Color.Orange).MCvScalar);
                                     CvInvoke.Rectangle(imageFrame, face, new Bgr(Color.Green).MCvScalar, 2);
@@ -133,7 +133,7 @@ namespace TestDetectApp
 
                             if (result.Label != -1 && result.Distance < ThresholdForNonDetectedFacesImage)
                             {
-                                res = "id: " + result.Label + " name: " + PersonsNames[result.Label];
+                                res = "id: " + result.Label + " name: " + PersonsNames[result.Label] + " accuracy: " + (1 - result.Distance / ThresholdForNonDetectedFacesImage) * 100 + " %";
                                 CvInvoke.PutText(imageFrame, PersonsNames[result.Label], new Point(30, 30),
                                     FontFace.HersheyComplex, 1.0, new Bgr(Color.Orange).MCvScalar);
                             }
