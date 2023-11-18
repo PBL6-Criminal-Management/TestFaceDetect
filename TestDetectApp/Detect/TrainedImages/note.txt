@@ -15,6 +15,6 @@
 
 - bỏ bớt save image cho nhẹ train (oke r)
 
-- tính độ chính xác nhận dạng, phần trăm dự đoán cho mỗi label
+- tính độ chính xác nhận dạng (oke r), phần trăm dự đoán cho mỗi label
 
 - resize bn là tốt nhất cho train (phổ biến là 200x200) (oke r)

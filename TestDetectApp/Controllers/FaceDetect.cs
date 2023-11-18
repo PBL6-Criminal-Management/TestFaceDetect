@@ -29,6 +29,7 @@ namespace TestDetectApp.Controllers
         public ActionResult<string> FaceDetectAPI([FromForm] UploadRequest request)
         {
             return _fds.FaceDetect(request.File, request.IsSave);
-        }     
+        }    
+    
     }
 }
